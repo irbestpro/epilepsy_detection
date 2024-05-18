@@ -8,7 +8,7 @@ EEG signals epilepsy detection by following steps:
 
   Please check Papers directory For more information and further Readings.
 
-<span style="font-size:0.5em;">CITATION:</span>
+<span style="font-size:0.7em;font-weight:800; color:navy;">CITATION:</span>
   
 * Alickovic, E., Kevric, J., & Subasi, A. (2018). Performance evaluation of empirical mode decomposition, discrete wavelet transform, and wavelet packed decomposition for automated epileptic seizure detection and prediction. Biomedical signal processing and control, 39, 94-102.
   
