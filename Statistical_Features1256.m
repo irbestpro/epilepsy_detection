@@ -1,0 +1,97 @@
+%
+'''These Codes Are Written By Mehdi Touyserkani
+    Email Address: Ir_Bestpro@yahoo.com
+    Website: Https://www.Ir-Bestpro.com
+ '''
+%
+
+function [out] = Statistical_Features1256(emd_features,wpd_features,dwt_features,CEE)
+
+%____According To Section 2.4________
+
+%___Statistical For EMD______________
+
+emd_f = [];
+
+for i=1:8
+    
+    emd_f = [emd_f meanabs(emd_features(i,:))]; % Meand Of Absolute Coefficient Values
+    emd_f = [emd_f rms(emd_features(i,:))]; %(1/numel(X)) * sum(X(:).^2)]; % Average Power Of Cofficients 
+    emd_f = [emd_f skewness(emd_features(i,:))]; % Skewness
+    emd_f = [emd_f kurtosis(emd_features(i,:))]; % Kurtosis
+    
+end
+
+%___Statistical For CEE______________
+
+CEE_f = [];
+
+for i=1:8
+    
+    CEE_f = [CEE_f meanabs(CEE(i,:))]; % Meand Of Absolute Coefficient Values
+    CEE_f = [CEE_f rms(CEE(i,:))]; %(1/numel(X)) * sum(X(:).^2)]; % Average Power Of Cofficients 
+    CEE_f = [CEE_f skewness(CEE(i,:))]; % Skewness
+    CEE_f = [CEE_f kurtosis(CEE(i,:))]; % Kurtosis
+    
+end
+
+%___Statistical For WPD______________
+
+wpd_f = [];
+
+for i=1:16   
+    
+    wpd_f = [wpd_f meanabs(wpd_features(i,:))]; % Meand Of Absolute Coefficient Values
+    wpd_f = [wpd_f rms(wpd_features(i,:))]; %(1/numel(X)) * sum(X(:).^2)]; % Average Power Of Cofficients 
+    wpd_f = [wpd_f skewness(wpd_features(i,:))]; % Skewness
+    wpd_f = [wpd_f kurtosis(wpd_features(i,:))]; % Kurtosis
+    
+end
+
+%___Statistical For DWT______________
+
+D1 = dwt_features(1,1:1027);
+D2 = dwt_features(1,1028:1544);
+D3 = dwt_features(1,1545:1806);
+D4 = dwt_features(1,1807:1940);
+% D5 = dwt_features(1,3862:3995);
+% D6 = dwt_features(1,3996:4065);
+A = dwt_features(1,1941:end);
+
+dwt_f = [];
+dwt_f = [dwt_f meanabs(D1)];
+dwt_f = [dwt_f meanabs(D2)];
+dwt_f = [dwt_f meanabs(D3)];
+dwt_f = [dwt_f meanabs(D4)];
+% dwt_f = [dwt_f meanabs(D5)];
+% dwt_f = [dwt_f meanabs(D6)];
+dwt_f = [dwt_f meanabs(A)];
+
+dwt_f = [dwt_f rms(D1)];
+dwt_f = [dwt_f rms(D2)];
+dwt_f = [dwt_f rms(D3)];
+dwt_f = [dwt_f rms(D4)];
+% dwt_f = [dwt_f rms(D5)];
+% dwt_f = [dwt_f rms(D6)];
+dwt_f = [dwt_f rms(A)];
+
+dwt_f = [dwt_f skewness(D1)];
+dwt_f = [dwt_f skewness(D2)];
+dwt_f = [dwt_f skewness(D3)];
+dwt_f = [dwt_f skewness(D4)];
+% dwt_f = [dwt_f skewness(D5)];
+% dwt_f = [dwt_f skewness(D6)];
+dwt_f = [dwt_f skewness(A)];
+
+dwt_f = [dwt_f kurtosis(D1)];
+dwt_f = [dwt_f kurtosis(D2)];
+dwt_f = [dwt_f kurtosis(D3)];
+dwt_f = [dwt_f kurtosis(D4)];
+% dwt_f = [dwt_f kurtosis(D5)];
+% dwt_f = [dwt_f kurtosis(D6)];
+dwt_f = [dwt_f kurtosis(A)];
+
+out = [emd_f dwt_f wpd_f CEE_f];
+ 
+end
+
