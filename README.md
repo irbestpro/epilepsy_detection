@@ -1,12 +1,12 @@
 # epilepsy_detection
 EEG signals epilepsy detection by following steps:
 
-* Noise Removing by applying MSPCA algorithm.
-* Extract signals coefficients and details by applying wpd (Wavelet packet decomposition), dwt, emd and ceemdan algorithms.
-* Feature selection by using binary gravitational search algorithm.
-* Final prediction by KNN,SVM,ANN and Random forest models.
+  * Noise Removing by applying MSPCA algorithm.
+  * Extract signals coefficients and details by applying wpd (Wavelet packet decomposition), dwt, emd and ceemdan algorithms.
+  * Feature selection by using binary gravitational search algorithm.
+  * Final prediction by KNN,SVM,ANN and Random forest models.
 
-  Please check Papers directory For more information and further Readings.
+Please check Papers directory For more information and further Readings.
 
 <span style="font-size:0.7em;font-weight:800; color:navy;">CITATION:</span>
   
